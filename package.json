@@ -1,0 +1,20 @@
+{
+  "name": "zidhuss.me",
+  "version": "1.0.0",
+  "description": "Source for http://zidhuss.me",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "zidhuss",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.10.0",
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-html": "^0.4.4",
+    "gulp-image": "^1.2.1",
+    "gulp-plumber": "^1.0.1",
+    "gulp-sass": "^2.1.0"
+  }
+}
