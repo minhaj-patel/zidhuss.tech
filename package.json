@@ -2,14 +2,11 @@
   "name": "zidhuss.me",
   "version": "1.0.0",
   "description": "Source for http://zidhuss.me",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "author": "zidhuss",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "browser-sync": "^2.10.0",
+    "del": "^2.2.0",
     "gulp": "^3.9.0",
     "gulp-concat": "^2.6.0",
     "gulp-html": "^0.4.4",

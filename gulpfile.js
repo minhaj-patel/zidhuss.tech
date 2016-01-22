@@ -4,7 +4,8 @@ var gulp = require('gulp'),
     plumber = require('gulp-plumber'),
     validator = require('gulp-html'),
     image = require('gulp-image'),
-    sass = require('gulp-sass');
+    sass = require('gulp-sass'),
+    del = require('del');
 
 // Dev Dependnecies
 var browserSync = require('browser-sync').create();
@@ -14,6 +15,10 @@ gulp.task('lint', function() {
     return gulp.src('./src/**/*.js')
     .pipe(jshint())
     .pipe(jshint.reporter('default'));
+});
+
+gulp.tast('clean', function() {
+    return del('build/');
 });
 
 // Serve
