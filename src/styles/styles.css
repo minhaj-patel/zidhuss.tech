@@ -1,78 +1,96 @@
-@import url(https://fonts.googleapis.com/css?family=Dosis|Arvo);
+@import url(https://fonts.googleapis.com/css?family=Merriweather|Source+Sans+Pro);
+@import 'reset-css/reset.css';
 
-@mixin transition($transition...) {
-    -moz-transition:    $transition;
-    -o-transition:      $transition;
-    -webkit-transition: $transition;
-    transition:         $transition;
+:root {
+  --background: #282828;
+  --foreground: #ebdbb2;
+  --red: #fb4934;
 }
+
+@custom-media --large screen and (min-width: 45em);
+@custom-media --small screen and (max-width: 44em);
 
 *, *:after, *:before {
   box-sizing: border-box;
 }
 
+*::selection {
+  background: var(--red);
+  color: var(--background);
+}
+
 body {
-  font-family: "Dosis", sans-serif;
-  margin: 0;
-  padding: 2em;
+  font-family: 'Source Sans Pro', sans-serif;
+  padding: 10em 10%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   min-height: 100vh;
-  text-align: center;
-  color: rgba(0, 0, 0, .87);
-  background-color: #f0f0f0;
-}
+  line-height: 1.625;
+  background: var(--background);
+  color: var(--foreground);
 
-a {
-  text-decoration: none;
-  @include transition(color .5s ease-out);
-  color: rgba(0, 0, 0, .87);
-  color: #757780;
-}
-
-a:hover {
-  color: #98ce00;
+  @media (--large) {
+    font-size: 115%;
+  }
 }
 
 main {
-  font-size: 1.5em;
+  padding-top: 2em;
   flex-grow: 1;
-  display: flex;
-  flex-direction: inherit;
-  max-width: 25em;
+}
 
-  p + div a {
-    font-size: 2em;
-    margin: 0 .1em 0 .1em;
+a:before {
+  content: '— ';
+}
+
+a {
+  color: var(--foreground);
+  text-decoration: none;
+  font-size: 1.1em;
+  transition: color 0.1s ease-out;
+
+  &:hover {
+    color: var(--red);
   }
 
-  div + div a {
-    font-size: 1rem;
-  }
+  &.disabled {
+    color: #504945;
 
-  em {
-    font-style: normal;
-    font-weight: 600;
+    &:hover:after {
+      color: var(--red);
+      @media (--large) {
+        content: ' (coming soon)';
+      }
+    }
+
+    @media (--small) {
+      &:after {
+        content: ' (coming soon)';
+      }
+    }
   }
 }
 
-header  {
 
-  flex-grow: 1;
-  display: flex;
-  flex-direction: inherit;
-  justify-content: flex-end;
+h1 {
+  font-family: 'Merriweather', serif;
+  font-size: 7vmax;
+  color: #fbf1c7;
+}
 
-  img {
-    width: 13em;
-    height: 11em;
-    margin-bottom: 2em;
-  }
+p {
+  text-align: justify;
+  margin-top: 2em;
+  max-width: 30em;
+  color: #928374;
+}
 
+li {
+  line-height: 1.8em;
 }
 
 footer {
-  justify-self: flex-end;
+  margin-top: 6em;
+  color: #504945;
+  text-align: center;
 }
